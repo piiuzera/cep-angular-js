@@ -1,0 +1,24 @@
+{
+  "name": "cep-angular-js",
+  "homepage": "https://github.com/piiuzera/cep-angular-js",
+  "authors": [
+    "Matheus Amaro <matheus.amaro@gmail.com>"
+  ],
+  "description": "Consulta CEP com Angular JS",
+  "main": "",
+  "keywords": [
+    "buscacep",
+    "amaro",
+    "amarosystem",
+    "angularjs",
+    "as"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

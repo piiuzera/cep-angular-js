@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="amarosystem">
+  <head ng-controller="layoutController">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title ng-bind="title">Carregando...</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body ng-controller="cepController">
+
+  	<div class="container-fluid">
+  		<div class="row" style="padding-top: 30px;">
+  			<div class="col-md-4"></div>
+  			<div class="col-md-4" ng-controller="layoutController">
+  				<h1 class="text-center">{{pageTitle}}</h1>
+  			</div>
+  			<div class="col-md-4"></div>
+  		</div>
+
+  		<div class="row">
+  			<div class="col-md-4"></div>
+  			<div class="col-md-4">
+  				<div>
+  					<div class="form-group">
+  						<input type="text" class="form-control" ng-model="cep" maxlength="8" placeholder="CEP" required="required">
+  					</div>
+
+  					<div class="form-group text-right">
+  						<button class="btn btn-primary" ng-click="getCep()">Consultar</button>
+  					</div>
+  				</div>
+  			</div>
+  			<div class="col-md-4"></div>
+  		</div>
+
+  		<div class="row">
+  			<div class="col-md-4"></div>
+  			<div class="col-md-4">
+  				<div class="alert alert-success" ng-show="endereco">
+  					<div class="form-group">
+	  					<strong>Logradouro:</strong>
+	  					{{endereco.logradouro}}
+  					</div>
+
+  					<div class="form-group">
+	  					<strong>Complemento:</strong>
+	  					{{endereco.complemento}}
+  					</div>
+
+  					<div class="form-group">
+	  					<strong>Bairro:</strong>
+	  					{{endereco.bairro}}
+  					</div>
+
+  					<div class="form-group">
+	  					<strong>Cidade:</strong>
+	  					{{endereco.localidade}}
+  					</div>
+
+  					<div class="form-group">
+	  					<strong>UF:</strong>
+	  					{{endereco.uf}}
+  					</div>
+  				</div>
+
+  				<div class="alert alert-danger" ng-show="error">
+  					<strong>Erro!</strong> {{error}}
+  				</div>
+  			</div>
+  			<div class="col-md-4"></div>
+  		</div>
+  	</div>
+
+    <!-- JQuery JS -->
+    <script src="lib/jquery/dist/jquery.min.js"></script>
+
+    <!-- Bootstrap JS -->
+    <script src="lib/bootstrap/dist/js/bootstrap.min.js"></script>
+
+    <!-- Angular JS -->
+    <script src="lib/angular/angular.min.js"></script>
+
+    <!-- Angular Components -->
+    <script src="app/app.component.js"></script>
+
+    <!-- Controllers -->
+    <script src="js/controllers/layout.controller.js"></script>
+    <script src="js/controllers/cep.controller.js"></script>
+
+	<!-- Factories -->
+	<script src="js/factories/cep.factory.js"></script>
+
+  </body>
+</html>
